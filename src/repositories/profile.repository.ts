@@ -35,7 +35,7 @@ export class ProfileRepository {
   }
 
   async getProfile({ publicIdentifier }: { publicIdentifier: string }): Promise<Profile> {
-    const response = await this.client.request.profile.getProfile({ publicIdentifier: encodeUriComponent(publicIdentifier) });
+    const response = await this.client.request.profile.getProfile({ publicIdentifier: encodeURIComponent(publicIdentifier) });
 
     const results = response.included || [];
 
